@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
-function App() {
+function App({initial}) {
+  const [counter, setCounter] = useState(initial)
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +19,12 @@ function App() {
         >
           Learn React
         </a>
+        <button
+          className="App-button"
+          onClick={() => setCounter(prev => prev+1)}
+        >
+          Press Me {counter}
+        </button>
       </header>
     </div>
   );
